@@ -34,7 +34,7 @@ public class Exercise2 {
         if(n == 0){
             return n;
         } else{
-            return triangle(n-1);
+            return triangle(n-1) + n;
         }
     }
     
@@ -42,7 +42,7 @@ public class Exercise2 {
         Exercise2 test = new Exercise2();
         System.out.println(test.digitalSum(126));
         System.out.println(test.digitalRoot(2019));
-        System.out.println(test.digitalRoot(4));
+        System.out.println(test.triangle(4));
         
     }
 }
