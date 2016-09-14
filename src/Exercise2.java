@@ -21,8 +21,28 @@ public class Exercise2 {
         }
     }
     
+    public int digitalRoot(int n){
+        int sum = digitalSum(n);
+        if(sum < 10){
+            return sum;
+        } else{
+            return digitalRoot(sum);
+        }
+    }
+    
+    public int triangle(int n){
+        if(n == 0){
+            return n;
+        } else{
+            return triangle(n-1);
+        }
+    }
+    
     public static void main(String[] args) {
         Exercise2 test = new Exercise2();
         System.out.println(test.digitalSum(126));
+        System.out.println(test.digitalRoot(2019));
+        System.out.println(test.digitalRoot(4));
+        
     }
 }
