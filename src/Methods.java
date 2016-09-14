@@ -50,9 +50,47 @@ public class Methods {
         }
     }
     
+    public String binaryConvert(int n){
+        if(n==1){
+            return "1";
+        }else if(n==0){
+            return "0";
+        }
+        if(n%2==0){
+            return binaryConvert(n/2) + "0";
+        }else{
+            return binaryConvert(n/2) + "1";
+        }
+    }
+    
+    public String letterCheck(int n){
+        if(n==10){
+            return "a";
+        }else if(n==11){
+            return "b";
+        }else if(n==12){
+            return "c";
+        }else if(n==13){
+            return "d";
+        }else if(n==14){
+            return "e";
+        }else if(n==15){
+            return "f";
+        }
+        return "" + n;
+        
+    }
+    
+    public String convert(int n, int b){
+        if(n<b){
+            return letterCheck(n);
+        }
+        return convert(n/b,b) + letterCheck(n%b);
+    }
+    
     public static void main(String[] args) {
         Methods test = new Methods();
         Scanner in = new Scanner(System.in);
-        test.hailstone(in.nextInt());
+        System.out.println(test.convert(in.nextInt(),in.nextInt()));
     }
 }
