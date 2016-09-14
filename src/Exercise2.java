@@ -14,10 +14,11 @@ public class Exercise2 {
      */
     
     public int digitalSum(int n){
-        if(n <= 10){
+        if(n < 10){
             return n;
+        } else {
+            return digitalSum(n / 10) + (n % 10);
         }
-        return digitalSum(n / 10) + digitalSum(n % 10);
     }
     
     public static void main(String[] args) {
