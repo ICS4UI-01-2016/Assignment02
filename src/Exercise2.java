@@ -15,7 +15,6 @@ public class Exercise2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         //Scanner used to recognize user input
         Scanner in = new Scanner(System.in);
         //necessary for calling methods later on
@@ -35,18 +34,15 @@ public class Exercise2 {
         int answer2 = digitalSum(answer);
         int answer4 = hailStone(n);
         //boolean answer8 = isPalindrome(word, wordSize);
-        double answer5 = binaryConvert(n);
+        int answer5 = binaryConvert(n);
 
-        //ASK LAMONT IF THIS IS ALLOWED?!? 
-        int hey = 156;
-        String hello = Integer.toBinaryString(hey);
-        System.out.println(hello);
         //Prints answer for questions
-        System.out.println("");
+        
         System.out.println("Answer#1 " + answer);
         System.out.println("Answer#2 " + answer2);
         System.out.println("Answer#3 " + test.triangle(2));
         System.out.println("Answer#4 " + answer4);
+        System.out.println("Answer#5 " + answer5);
         // System.out.println("Answer#7 " + answer8);
         System.out.println("Answer#8" + answer5);
 
@@ -97,13 +93,23 @@ public class Exercise2 {
         return hailStone(n);
     }
 
-    public static double binaryConvert(int n) {
-        String result = "";
-        if (n % 10 == 1 || n % 10 == 3 || n % 10 == 5 || n % 10 == 7 || n % 10 == 9) {
-            return n/2;
+    public static int binaryConvert(int n) {
+        System.out.println("lol fail + "+n);
+      
+        if(n%2 == 1){
+            System.out.println("yo enemey incoming" + 1);
+            
         }
-
-        return n;
+        if(n%2 == 0){
+            System.out.println("Enemy ult down " + 0);
+            
+        }
+        if(n == 1){
+            return n;
+        }
+        
+        return binaryConvert(n/2);
+        
     }
     //  public static boolean isPalindrome(String s, int length){
     //    String first;
