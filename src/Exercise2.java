@@ -40,7 +40,7 @@ public class Exercise2 {
         
         System.out.println("Answer#1 " + answer);
         System.out.println("Answer#2 " + answer2);
-        System.out.println("Answer#3 " + test.triangle(2));
+        System.out.println("Answer#3 " + test.triangle(3));
         System.out.println("Answer#4 " + answer4);
         System.out.println("Answer#5 " + answer5);
         // System.out.println("Answer#7 " + answer8);
@@ -68,8 +68,11 @@ public class Exercise2 {
 
     //method used to solve question 3
     public int triangle(int n) {
-        if (n == 1 || n == 0) {
+        if (n == 1) {
             return 1;
+        }
+        if(n==0){
+            return 0;
         }
         return n + triangle(n - 1);
     }
@@ -94,22 +97,22 @@ public class Exercise2 {
     }
 
     public static int binaryConvert(int n) {
-        System.out.println("lol fail + "+n);
+        String word;
       
         if(n%2 == 1){
-            System.out.println("yo enemey incoming" + 1);
+            System.out.print(1);
+            
             
         }
         if(n%2 == 0){
-            System.out.println("Enemy ult down " + 0);
+            System.out.print(0);
             
         }
-        if(n == 1){
+        if(n==1){
+            System.out.println("");
             return n;
         }
-        
-        return binaryConvert(n/2);
-        
+        return binaryConvert(n/2);     
     }
     //  public static boolean isPalindrome(String s, int length){
     //    String first;
