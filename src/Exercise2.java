@@ -30,6 +30,13 @@ public class Exercise2 {
         return digitalRoot(sum);
     }
 
+    public static int triangle(int n) {
+        // Create an if statement to focus on the recusion!
+        if (n == 0 || n == 1) {
+            return n;
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
