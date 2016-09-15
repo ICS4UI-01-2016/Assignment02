@@ -34,7 +34,7 @@ public class Exercise2 {
         int answer2 = digitalSum(answer);
         int answer4 = hailStone(n);
         //boolean answer8 = isPalindrome(word, wordSize);
-        int answer5 = binaryConvert(n);
+        String answer5 = binaryConvert(n);
 
         //Prints answer for questions
         
@@ -44,8 +44,6 @@ public class Exercise2 {
         System.out.println("Answer#4 " + answer4);
         System.out.println("Answer#5 " + answer5);
         // System.out.println("Answer#7 " + answer8);
-        System.out.println("Answer#8" + answer5);
-
 
     }
 
@@ -96,23 +94,29 @@ public class Exercise2 {
         return hailStone(n);
     }
 
-    public static int binaryConvert(int n) {
-        String word;
+    public static String binaryConvert(int n) {
+        String word = "";
       
         if(n%2 == 1){
-            System.out.print(1);
-            
-            
+            word = "1";
         }
         if(n%2 == 0){
-            System.out.print(0);
-            
+            word = "0";
         }
         if(n==1){
-            System.out.println("");
-            return n;
+            return word; 
         }
-        return binaryConvert(n/2);     
+        return binaryConvert(n/2)+ word ;   
+    }
+    
+    public static String convert(int n, int b){
+        String word = "";
+
+        if(n%b > 0){
+            word = ""
+        }
+       return convert(n/b,0);
+        
     }
     //  public static boolean isPalindrome(String s, int length){
     //    String first;
