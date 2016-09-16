@@ -59,15 +59,16 @@ public class Exercise2 {
         }
     }
 
-    public static int binaryConvert(int n) {
+    public static String binaryConvert(int n) {
         // Create two bases
+        String binaryString = "";
         // If the integer ends has a remainder of 0 after dividing by 2
         if (n % 2 == 0) {
             // Calling the method again
             return n;
         } else {
             // Calling the method again
-            return binaryConvert(n);
+            return binaryString(n / 2);
 
         }
         // Return two
@@ -96,11 +97,11 @@ public class Exercise2 {
 
         // Print out the user's answer
         System.out.println("Question 4: ");
-        System.out.println(hailstone(12));
+        hailstone(12);
 
-        // Print out the user's answer
-        System.out.println("Question 5: ");
-        System.out.println(binaryConvert(156));
+//        // Print out the user's answer
+//        System.out.println("Question 5: ");
+//        System.out.println(binaryConvert(156));
 
     }
 }
