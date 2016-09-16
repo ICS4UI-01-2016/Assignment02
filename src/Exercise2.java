@@ -52,7 +52,7 @@ public class Exercise2 {
     }
     
     public int binaryConvert(int n){
-        if(n <= 1){
+        if(n / 2 == 0){
             return n;
         } else{
             System.out.print(n % 2);
@@ -67,6 +67,7 @@ public class Exercise2 {
         System.out.println(test.triangle(4));
         test.hailstone(5);
         test.binaryConvert(156);
+        System.out.println("");
         
     }
 }
