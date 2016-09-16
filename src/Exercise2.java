@@ -59,8 +59,17 @@ public class Exercise2 {
         }
     }
 
-    public static binaryConvert(int n) {
+    public static int binaryConvert(int n) {
         // Create two bases
+        // If the integer ends has a remainder of 0 after dividing by 2
+        if (n % 2 == 0) {
+            // Calling the method again
+            return n;
+        } else {
+            // Calling the method again
+            return binaryConvert(n);
+
+        }
         // Return two
         // Have to flip the binary code
     }
@@ -74,20 +83,24 @@ public class Exercise2 {
         Exercise2 test = new Exercise2();
 
         // Print out the user's answer (Question 1)
-        System.out.println("Question 1:");
+        System.out.println("Question 1: ");
         System.out.println(test.digitalSum(0));
 
         // Print out the user's answer (Question 2)
-        System.out.println("Question 2:");
+        System.out.println("Question 2: ");
         System.out.println(test.digitalRoot(0));
 
         // Print out the user's answer
-        System.out.println("Question 3:");
+        System.out.println("Question 3: ");
         System.out.println(triangle(0));
 
         // Print out the user's answer
-        System.out.println("Question 4:");
+        System.out.println("Question 4: ");
         System.out.println(hailstone(12));
+
+        // Print out the user's answer
+        System.out.println("Question 5: ");
+        System.out.println(binaryConvert(156));
 
     }
 }
