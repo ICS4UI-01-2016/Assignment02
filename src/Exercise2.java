@@ -170,15 +170,15 @@ public class Exercise2 {
     }
      public static String isPalindrome(String s, int length){
         String first = s.substring(length-1);
-        String second = s.substring(1);
+        String second = s.substring(0,1);
+        System.out.println(second);
         
-        if(first == second){
-            
+        if(first != second){
+            return "False";
         }
-       
-         System.out.println(first);
-        
-      first = s.substring(length);
-     return first;
+        if(first == second){
+            return "true";
+        }
+     return isPalindrome(s,length-2);
     }
 }
