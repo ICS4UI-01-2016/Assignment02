@@ -23,6 +23,7 @@ public class Exercise2 {
         System.out.println("Enter a number please.");
         //saves the number 
         int n = in.nextInt();
+        int b = in.nextInt();
 
         System.out.println("Write a word to determine if its Palindrome or not");
         String word = in.nextLine();
@@ -35,6 +36,7 @@ public class Exercise2 {
         int answer4 = hailStone(n);
         //boolean answer8 = isPalindrome(word, wordSize);
         String answer5 = binaryConvert(n);
+        String answer6 = convert(n,b);
 
         //Prints answer for questions
         
@@ -43,6 +45,7 @@ public class Exercise2 {
         System.out.println("Answer#3 " + test.triangle(3));
         System.out.println("Answer#4 " + answer4);
         System.out.println("Answer#5 " + answer5);
+        System.out.println("Answer#6 " + answer6);
         // System.out.println("Answer#7 " + answer8);
 
     }
@@ -106,16 +109,62 @@ public class Exercise2 {
         if(n==1){
             return word; 
         }
-        return binaryConvert(n/2)+ word ;   
+        return binaryConvert(n/2)+ word;   
     }
     
     public static String convert(int n, int b){
         String word = "";
-
-        if(n%b > 0){
-            word = ""
+        
+        if(n==1){
+            word = "" + n%b;
+            return word;
         }
-       return convert(n/b,0);
+        //When the base is higher than n
+        if(n < b){
+            if(n == 10){
+                 word = "A";
+            }
+            else if(n == 11){
+                word = "B";
+            }else if(n == 12){
+                word = "C";
+            }else if(n == 13){
+                return "D";
+            }else if(n == 14){
+                return "E";
+            }else if(n >= 15){
+                return "F";
+            }
+            if(n < b){
+                return "" + n;
+            }
+        }
+        if(n == b){
+            return "0";
+        }
+        else if(n%b < 10){
+            word = "" + n%b;
+        }
+        else if(n%b == 10){
+            word = "A";
+        }
+        else if(n%b == 11){
+            word = "B";
+        }
+        else if(n%b == 12){
+            word = "C";
+        }
+        else if(n%b == 13){
+            word = "D";
+        }
+        else if(n%b == 14){
+            word = "E";
+        }
+        else if(n%b >= 15){
+            word = "F";
+        }
+            
+       return convert(n/b,b) + word;
         
     }
     //  public static boolean isPalindrome(String s, int length){
