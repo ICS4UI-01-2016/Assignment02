@@ -19,16 +19,16 @@ public class Exercise2 {
         Scanner in = new Scanner(System.in);
         //necessary for calling methods later on
         Exercise2 test = new Exercise2();
+        System.out.println("Write a word to determine if its Palindrome or not");
+        String word = in.nextLine();
+        int wordSize = word.length();
         //Asks for a number
         System.out.println("Enter a number please.");
         //saves the number 
         int n = in.nextInt();
         int b = in.nextInt();
 
-        System.out.println("Write a word to determine if its Palindrome or not");
-        String word = in.nextLine();
-
-        int wordSize = word.length();
+        
 
         //necessary to "spit" out (output) the result a method has performed
         int answer = digitalSum(n);
@@ -37,6 +37,7 @@ public class Exercise2 {
         //boolean answer8 = isPalindrome(word, wordSize);
         String answer5 = binaryConvert(n);
         String answer6 = convert(n,b);
+        String answer7 = isPalindrome(word,wordSize);
 
         //Prints answer for questions
         
@@ -46,7 +47,7 @@ public class Exercise2 {
         System.out.println("Answer#4 " + answer4);
         System.out.println("Answer#5 " + answer5);
         System.out.println("Answer#6 " + answer6);
-        // System.out.println("Answer#7 " + answer8);
+        System.out.println("Answer#7 " + answer7);
 
     }
 
@@ -167,9 +168,17 @@ public class Exercise2 {
        return convert(n/b,b) + word;
         
     }
-    //  public static boolean isPalindrome(String s, int length){
-    //    String first;
-    //  first = s.substring(length);
-    //return isPalindrome(s,length-1);
-    //}
+     public static String isPalindrome(String s, int length){
+        String first = s.substring(length-1);
+        String second = s.substring(1);
+        
+        if(first == second){
+            
+        }
+       
+         System.out.println(first);
+        
+      first = s.substring(length);
+     return first;
+    }
 }
