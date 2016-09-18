@@ -60,21 +60,20 @@ public class Exercise2 {
     }
 
     public static String binaryConvert(int n) {
-        // Create two bases
-        String binaryString = "";
-        // If the integer ends has a remainder of 0 after dividing by 2
-        if (n % 2 == 0) {
-            // Calling the method again
-            return n;
+        // If the integer is equal to 1 after being divided by 2
+        if (n / 2 == 0) {
+            // * Calling the method again and return the remainder (divides "1" 0 times + a remainder of 1
+            return "" + n % 2;
         } else {
-            // Calling the method again
-            return binaryString(n / 2);
-
+            // *Calling the method again and return the remainder of that number in base 2 and the current number / 2
+            return binaryConvert(n / 2) + n % 2;
         }
-        // Return two
-        // Have to flip the binary code
+        // *Have to flip the binary code = Does that in the code itself
     }
 
+//    public static convert(int n, int b){
+//        
+//    }
     /**
      * @param args the command line arguments
      */
@@ -93,15 +92,17 @@ public class Exercise2 {
 
         // Print out the user's answer
         System.out.println("Question 3: ");
-        System.out.println(triangle(0));
+        System.out.println(test.triangle(0));
 
         // Print out the user's answer
         System.out.println("Question 4: ");
-        hailstone(12);
+        hailstone(2);
 
-//        // Print out the user's answer
-//        System.out.println("Question 5: ");
-//        System.out.println(binaryConvert(156));
+        // Print out the user's answer
+        System.out.println("Question 5: ");
+        System.out.println(test.binaryConvert(1000));
 
+        // Print out the user's answer
+        System.out.println("Question 6: ");
     }
 }
