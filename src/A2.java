@@ -10,11 +10,9 @@
 public class A2 {
 
     public int digitalSum(int n) {
-        // if a single digit number is entered        
-        if (n <= 9) {
-            if (n >= 0 && n <= 9) {
-                return n;
-            }
+        // if a single digit number is entered
+        if (n >= 0 && n <= 9) {
+            return n;
         }
 
         // if a mulitple-digit number is entered
@@ -66,10 +64,57 @@ public class A2 {
         return Hailstone(total);
     }
 
-    public int binaryConvert(int n){
-        
+    public String binaryConvert(int n) {
+        String binary = "";
+        // base case
+        // if one num left == 1
+        if (n == 1) {
+            binary = "1";
+            return binary;
+        } // if one num left == 0
+        if (n == 0) {
+            binary = "0";
+            return binary;
+        }
+        // if n is bigger than 1
+        if (n > 1) {
+            // even num
+            if (n % 2 == 0) {
+                binary = "0";
+            }
+            // odd num
+            if (n % 2 == 1) {
+                binary = "1";
+            }
+        }
+        // divide n in half
+        n = n / 2;
+        // loop
+        return binaryConvert(n) + binary;
     }
-    
+
+//    public int convert (int n, int b){
+//        
+//    }
+    public boolean isPalindrome(String s, int length) {
+        StringBuilder sBuilder = new StringBuilder(s);
+
+        // first analyser -- fix
+        int n = 0;
+
+        if (sBuilder.charAt(0 + n) == sBuilder.charAt(length - n)) {
+            n = n + 1;
+        } else if (n != length) {
+            return false;
+        }
+
+        if (n == length) {
+            return true;
+        }
+
+        return isPalindrome(s, length);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -88,8 +133,14 @@ public class A2 {
 
         // Q4
         System.out.println("Q4: " + test.Hailstone(5));
-        
+
         // Q5
         System.out.println("Q5: " + test.binaryConvert(156));
+
+        // Q6
+        System.out.println("Q6: ");
+
+        // Q7
+        System.out.println("Q7: " + test.isPalindrome("racecar", 7));
     }
 }
