@@ -62,36 +62,6 @@ public class Exercise2 {
         return value;
     }
 
-    
-    public String Convert(int n, int b, int iteration ){
-        String [] digit = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
-        String value = "";
- 
-        //System.out.println( n );
-   
-        for (int i=0;i<iteration; i++ ) {
-            System.out.print(">");
-        }
-        System.out.println(" Convert ( " + n +"," + b +")");
-                   
-        // determine if the number is larger than a single digit in the base.
-        // If it is recurse to process the next position/digit
-        if(n >= b){
-            value = Convert(n / b, b, iteration + 1);
-        }
-        
-        for (int i=0;i<iteration; i++ ) {
-            System.out.print(">");
-        }
-        System.out.println(" After-Call to Convert ( " + n +"," + b +")");
-      //  System.out.println( ">" + value );
-        
-        // determine the remainder and append the remainder in string form
-        value = value + digit[ n % b ];
-        
-        return value;
-    }
-    
 //    public void binaryConvert(int n){
 //        if(n / 2 != 0){
 //            binaryConvert(n / 2);
@@ -99,39 +69,61 @@ public class Exercise2 {
 //        System.out.print(n % 2);
 //    }
     
-//    public int convert(int n, int b) {
-//        
-//    }
-//    
-//    public boolean Palindrome(String s, int length) {
-//        boolean p = true;
-//        if(length == 0 || length == 1 || p == false){
-//            return p;
-//        }
-//        
-//        if(s.charAt(1) == s.charAt(length)){
-//            p = true;
-//            s.substring(2, length - 1);
-//            Palindrome (s, length);
-//        }else{
-//            p = false;
-//        }
-//        
-//        return p;
-//    }
+    public String convert(int n, int b){
+        String [] digit = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+        String value = "";
+                   
+        // determine if the number is larger than a single digit in the base.
+        // If it is recurse to process the next position/digit
+        if(n >= b){
+            value = convert(n / b, b);
+        }
+        
+        // determine the remainder and append the remainder in string form
+        value = value + digit[ n % b ];
+        
+        return value;
+    }
+    
+    public boolean Palindrome(String s,int length) {
+        boolean p = true;
+        int start = 0;
+        s.substring(start, length);
+        System.out.println(start + " " + length);
+        System.out.println(s.charAt(start) + " " + s.charAt(length));
+        
+        if(s.charAt(start) != s.charAt(length)){
+            p = false;
+            System.out.println(s.charAt(start) + s.charAt(length));
+        }
+        
+        if(length <= 1 || p == false){
+            return p;
+        }
+        
+        start = start + 1;
+        return Palindrome(s, length - 1);
+    }
     
     
     public static void main(String[] args) {
         Exercise2 test = new Exercise2();
-        System.out.println(test.digitalSum(126));
-        System.out.println(test.digitalRoot(2019));
-        System.out.println(test.triangle(4));
-        test.hailstone(5);
-        System.out.println( test.binaryConvert(1000) );
-//        test.binaryConvert(1000);
-        System.out.println(" 1000 converted:");
-        System.out.println( test.Convert( 123456, 5, 1 ));
-//      System.out.println(test.Palindrome("dad", 3));
         
+        System.out.println("Question 1: " + test.digitalSum(126));
+        
+        System.out.println("Question 2: " + test.digitalRoot(2019));
+        
+        System.out.println("Question 3: " + test.triangle(4));
+        
+        System.out.println("Question 4: ");
+        test.hailstone(5);
+        
+        System.out.println("Question 5: " + test.binaryConvert(1000) );
+//        System.out.println("Question 5: ");
+//        test.binaryConvert(1000);
+        
+        System.out.println("Question 6: " + test.convert(123456, 5));
+        
+        System.out.println("Question 7: " + test.Palindrome("racecar",(7) - 1));
     }
 }
