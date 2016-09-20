@@ -60,20 +60,42 @@ public class Exercise2 {
     }
 
     public static String binaryConvert(int n) {
-        // If the integer is equal to 1 after being divided by 2
-        if (n / 2 == 0) {
-            // * Calling the method again and return the remainder (divides "1" 0 times + a remainder of 1
-            return "" + n % 2;
-        } else {
-            // *Calling the method again and return the remainder of that number in base 2 and the current number / 2
-            return binaryConvert(n / 2) + n % 2;
+        // Create new empty string
+        String wordEntered = "";
+        // If the numeber is even
+        if (n % 2 == 0) {
+            wordEntered = "0";
         }
-        // *Have to flip the binary code = Does that in the code itself
+        // If the numeber is off
+        if (n % 2 == 1) {
+            wordEntered = "1";
+        }
+        // Ending of the recusion loop if the integer is equal to one
+        if (n == 1) {
+            return wordEntered;
+        }
+        // Recall the method in binary form (backwards)
+        return binaryConvert(n / 2) + wordEntered;
     }
 
-//    public static convert(int n, int b){
-//        
-//    }
+    public static String convert(int n, int b) {
+        // Create new empty string
+        String word = "";
+        // Starting the recusion loop if the integer is equal to one
+        String[] answers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+        // Base case that 0 when n is equal to 0. E.g 7/8 = 0 = RETURN 0
+        if (n == 0) {
+            return word;
+        }
+        // After the calculation is done (n / b), heads to string to grab number/letter and prints it
+        word = answers[n % b];
+
+        // Recall the method in binary form (backwards)
+        // The method functions by taking in both n and b and then dividing n by b and then printing
+        // the letter or the number
+        return convert(n / b, b) + word;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -104,5 +126,7 @@ public class Exercise2 {
 
         // Print out the user's answer
         System.out.println("Question 6: ");
+        System.out.println(test.convert(1000, 16));
+
     }
 }
