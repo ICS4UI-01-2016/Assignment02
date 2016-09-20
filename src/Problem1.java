@@ -76,48 +76,52 @@ public class Problem1 {
         } else if (n == 0) {
             return "0";
         }
-        
+
         //create string for each number converted
         String part;
-        
+
         //if num is even
         if (n % 2 == 0) {
             part = "0";
-        //if num is odd
+            //if num is odd
         } else {
             part = "1";
         }
         //remove that last int so the next num can be converted
         n = n / 2;
-        
+
         //return recursion + num
         return binaryConvert(n) + part;
     }
-    
-   public int convert(int n, int b){
-       //base case
+
+    public int convert(int n, int b) {
+        //base case
         if (n == 1) {
             return 1;
         }
+       
         
-   }
-        
-    public boolean Palindrome(String s, int length){
-        int first = 0;
-        
-        //length of word or number
-        length = s.length();
-        int middle = length/2;
-        
-        if(s.substring(first, length) == s.substring(first)){
-            first ++;
-            length--;
+    }
+
+    public boolean isPalindrome(String s, int length) {
+
+        StringBuilder sBuilder = new StringBuilder(s);
+        if (length == 1 || s == "") {
             return true;
-        }else{
+        }
+
+        //length of word or number
+        if (sBuilder.charAt(0) == sBuilder.charAt(length - 1)) {
+            sBuilder.deleteCharAt(length - 1);
+            sBuilder.deleteCharAt(0);
+            return isPalindrome(sBuilder.toString(), length - 2);
+
+        } else {
             return false;
         }
-        }
-    
+
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -140,13 +144,12 @@ public class Problem1 {
         //output A5
         System.out.println("Q5:");
         System.out.println(test.binaryConvert(156));
-        
+
         //output A6
         System.out.println("Q6:");
-           
-        
+
+
         //output A7
-        System.out.println("Q7:");
-        System.out.println(test.Palindrome("Racecar", 0));
+        System.out.println("Q7 " + test.isPalindrome("racecar", 7));
     }
 }
