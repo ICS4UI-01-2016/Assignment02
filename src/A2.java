@@ -93,26 +93,30 @@ public class A2 {
         return binaryConvert(n) + binary;
     }
 
-//    public int convert (int n, int b){
-//        
-//    }
+    public int convert(int n, int b) {
+        // base case
+        if (n == 1) {
+            return 1;
+             
+        }
+    }
+
     public boolean isPalindrome(String s, int length) {
         StringBuilder sBuilder = new StringBuilder(s);
 
-        // first analyser -- fix
-        int n = 0;
-
-        if (sBuilder.charAt(0 + n) == sBuilder.charAt(length - n)) {
-            n = n + 1;
-        } else if (n != length) {
-            return false;
-        }
-
-        if (n == length) {
+        if (s.length() == 1 || s.length() == 0) {
             return true;
         }
 
-        return isPalindrome(s, length);
+        // starts at 0, add 1 per loop -- starts at end, minus 1 per loop
+        if (sBuilder.charAt(0) == sBuilder.charAt(length - 1)) {
+            // the character at n is not the same at char at
+            sBuilder.deleteCharAt(length - 1);
+            sBuilder.deleteCharAt(0);
+            return isPalindrome(sBuilder.toString(), length - 2);
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -138,7 +142,7 @@ public class A2 {
         System.out.println("Q5: " + test.binaryConvert(156));
 
         // Q6
-        System.out.println("Q6: ");
+        System.out.println("Q6: " + test.binaryConvert(1000, 8));
 
         // Q7
         System.out.println("Q7: " + test.isPalindrome("racecar", 7));
