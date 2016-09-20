@@ -85,24 +85,23 @@ public class Exercise2 {
         return value;
     }
     
-    public boolean Palindrome(String s,int length) {
+    public boolean Palindrome(String s, int length) {
         boolean p = true;
-        int start = 0;
-        s.substring(start, length);
-        System.out.println(start + " " + length);
-        System.out.println(s.charAt(start) + " " + s.charAt(length));
-        
-        if(s.charAt(start) != s.charAt(length)){
+        System.out.println(0 + " " + length);
+        System.out.println(s.charAt(0) + " " + s.charAt(length - 1));
+        if(s.charAt(0) != s.charAt(length - 1)){
             p = false;
-            System.out.println(s.charAt(start) + s.charAt(length));
         }
+        
+        String newString = s.substring(1, length - 2);
+        s = newString;
+        length = s.length();
         
         if(length <= 1 || p == false){
             return p;
         }
-        
-        start = start + 1;
-        return Palindrome(s, length - 1);
+
+        return Palindrome(s, length);
     }
     
     
@@ -124,6 +123,6 @@ public class Exercise2 {
         
         System.out.println("Question 6: " + test.convert(123456, 5));
         
-        System.out.println("Question 7: " + test.Palindrome("racecar",(7) - 1));
+        System.out.println("Question 7: " + test.Palindrome("racecar",(7)));
     }
 }
