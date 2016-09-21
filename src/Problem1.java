@@ -58,14 +58,20 @@ public class Problem1 {
             return 1;
         }
 
+        //create integer to manipulate if n is odd or even
         int stone = n;
 
+        //if n is odd
         if (n % 2 == 1) {
             stone = 3 * n + 1;
         } else {
+            //if n is even
             stone = n / 2;
         }
+        //print out each number on its own line
         System.out.println(n);
+
+        //return the manipulated numbers through the recursive method
         return Hailstone(stone);
     }
 
@@ -98,50 +104,62 @@ public class Problem1 {
         //base case
         if (n == 1) {
             return "1";
-        }else if(n==0){
+        } else if (n == 0) {
             return "";
         }
-        
+
+        //create string to hold the 'converted' numbers
         String digits = "";
+
+        //if the number is less than 10, turn the int into a string
         if (n % b < 10) {
             int result = n % b;
             digits = String.valueOf(result);
+            //if num equals 10 add 'A' to string
         } else if (n % b == 10) {
             digits = "A";
+            //if num equals 11 add 'B' to string
         } else if (n % b == 11) {
             digits = "B";
+            //if num equals 12 add 'C' to string
         } else if (n % b == 12) {
             digits = "C";
+            //if num equals 13 add 'D' to string
         } else if (n % b == 13) {
             digits = "D";
+            //if num equals 14 add 'E' to string
         } else if (n % b == 14) {
             digits = "E";
+            //if num equals 15 add 'F' to string
         } else if (n % b == 15) {
             digits = "F";
         }
-        
+
         //remove last int so next digit can be converted
         n = n / b;
-        
+
         //return method
         return convert(n, b) + digits;
 
     }
 
     public boolean isPalindrome(String s, int length) {
-
+        //create string builder to work with the word/string later on
         StringBuilder sBuilder = new StringBuilder(s);
+        //base case
         if (length == 1 || s == "") {
             return true;
         }
 
-        //length of word or number
+        //if the first/last number are the same remove the first/last number
         if (sBuilder.charAt(0) == sBuilder.charAt(length - 1)) {
             sBuilder.deleteCharAt(length - 1);
             sBuilder.deleteCharAt(0);
+            //return the method so that it recursively works through itself again until no letters remain
             return isPalindrome(sBuilder.toString(), length - 2);
 
         } else {
+            //if the word can not be reversed
             return false;
         }
 
@@ -152,28 +170,28 @@ public class Problem1 {
      */
     public static void main(String[] args) {
         Problem1 test = new Problem1();
-        //output A1
+        //Q1
         System.out.println("Q1 " + test.digitalSum(126));
 
-        //output A2
+        //Q2
         System.out.println("Q2 " + test.digitalRoot(126));
 
-        //output A3
+        //Q3
         System.out.println("Q3 " + test.triangle(3));
 
-        //output A4
+        //Q4
         System.out.println("Q4:");
         System.out.println(test.Hailstone(5));
         System.out.println("Q4 done.");
 
-        //output A5
+        //Q5
         System.out.println("Q5:");
         System.out.println(test.binaryConvert(156));
 
-        //output A6
-        System.out.println("Q6 " +test.convert(1000, 16));
+        //Q6
+        System.out.println("Q6 " + test.convert(1000, 16));
 
-        //output A7
+        //Q7
         System.out.println("Q7 " + test.isPalindrome("racecar", 7));
     }
 }
