@@ -93,12 +93,40 @@ public class A2 {
         return binaryConvert(n) + binary;
     }
 
-    public int convert(int n, int b) {
+    public String convert(int n, int b) {
         // base case
         if (n == 1) {
-            return 1;
-             
+            return "1";
+        } else if (n == 0){
+            return "";
         }
+        
+        // string to hold converted nums
+        String result = "";
+        
+        // if the number is less than 10, turn int to string
+        if (n % b < 10) {
+            int ans = n % b;
+            result = String.valueOf (ans);
+        // if >= 10
+        } else if (n % b == 10) {
+            result = "A";
+        } else if (n % b == 11) {
+            result = "B";
+        } else if (n % b == 12) {
+            result = "C";
+        } else if (n % b == 13) {
+            result = "D";
+        } else if (n % b == 14) {
+            result = "E";
+        } else if (n % b == 15) {
+            result = "F";
+        }
+        // input divided by base
+        n = n / b;
+        // loop
+        return convert(n , b) + result;
+        
     }
 
     public boolean isPalindrome(String s, int length) {
@@ -142,7 +170,7 @@ public class A2 {
         System.out.println("Q5: " + test.binaryConvert(156));
 
         // Q6
-        System.out.println("Q6: " + test.binaryConvert(1000, 8));
+        System.out.println("Q6: " + test.convert(1000, 8));
 
         // Q7
         System.out.println("Q7: " + test.isPalindrome("racecar", 7));
