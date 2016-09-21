@@ -35,6 +35,7 @@ public class Exercise2 {
         int answer2 = digitalSum(answer);
         int answer3 = triangle(n);
         int answer4 = hailStone(n);
+        int[] amount = new [2];
         //boolean answer8 = isPalindrome(word, wordSize);
         String answer5 = binaryConvert(n);
         String answer6 = convert(n, b);
@@ -61,7 +62,7 @@ public class Exercise2 {
         //divides by 10 and takes its remainder, then sends it back to call the method again
         return digitalSum(n / 10) + digitalSum(n % 10);
     }
-    
+
     //Same method as digitalSum, but this time it uses the answer from method 1
     public static int digitalRoot(int n) {
         if (n <= 9) {
@@ -141,19 +142,19 @@ public class Exercise2 {
             //if number = 10, prints out A as replacement
             if (n == 10) {
                 word = "A";
-            //if number = 10, prints out A as replacement
+                //if number = 10, prints out A as replacement
             } else if (n == 11) {
                 word = "B";
-            //if number = 10, prints out A as replacement
+                //if number = 10, prints out A as replacement
             } else if (n == 12) {
                 word = "C";
-            //if number = 10, prints out A as replacement
+                //if number = 10, prints out A as replacement
             } else if (n == 13) {
                 return "D";
-            //if number = 10, prints out A as replacement
+                //if number = 10, prints out A as replacement
             } else if (n == 14) {
                 return "E";
-            //if number > or equal to 15, prints out F as replacement
+                //if number > or equal to 15, prints out F as replacement
             } else if (n >= 15) {
                 return "F";
             }
@@ -223,4 +224,6 @@ public class Exercise2 {
         //return statement that returns both the word (that is modified) and the length of word (modified)
         return isPalindrome(s, length - 2);
     }
+    
+    public static int marbles(int n, )
 }
