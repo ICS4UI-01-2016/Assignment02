@@ -88,6 +88,14 @@ public class Methods {
         return convert(n/b,b) + letterCheck(n%b);
     }
     
+    public int mar(int size, int[] balls){
+        if(size < balls[0]){
+            return 0;
+        }
+        
+        return 0;
+    }
+    
     public static void main(String[] args) {
         Methods test = new Methods();
         Scanner in = new Scanner(System.in);
