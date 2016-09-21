@@ -94,13 +94,38 @@ public class Problem1 {
         return binaryConvert(n) + part;
     }
 
-    public int convert(int n, int b) {
+    public String convert(int n, int b) {
         //base case
         if (n == 1) {
-            return 1;
+            return "1";
+        }else if(n==0){
+            return "";
         }
-       
         
+        String digits = "";
+        if (n % b < 10) {
+            int result = n % b;
+            digits = String.valueOf(result);
+        } else if (n % b == 10) {
+            digits = "A";
+        } else if (n % b == 11) {
+            digits = "B";
+        } else if (n % b == 12) {
+            digits = "C";
+        } else if (n % b == 13) {
+            digits = "D";
+        } else if (n % b == 14) {
+            digits = "E";
+        } else if (n % b == 15) {
+            digits = "F";
+        }
+        
+        //remove last int so next digit can be converted
+        n = n / b;
+        
+        //return method
+        return convert(n, b) + digits;
+
     }
 
     public boolean isPalindrome(String s, int length) {
@@ -146,8 +171,7 @@ public class Problem1 {
         System.out.println(test.binaryConvert(156));
 
         //output A6
-        System.out.println("Q6:");
-
+        System.out.println("Q6 " +test.convert(1000, 16));
 
         //output A7
         System.out.println("Q7 " + test.isPalindrome("racecar", 7));
