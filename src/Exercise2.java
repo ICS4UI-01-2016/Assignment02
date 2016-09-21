@@ -102,7 +102,8 @@ public class Exercise2 {
     }
     
     public int Marbles(int total, int [] bags) {
-        return total;
+        int marblesInBox = 0;
+        return marblesInBox;
     }
     
     public static void main(String[] args) {
