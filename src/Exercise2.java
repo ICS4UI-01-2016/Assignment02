@@ -81,27 +81,35 @@ public class Exercise2 {
     public static String convert(int n, int b) {
         // Create new empty string
         String word = "";
-        // Starting the recusion loop if the integer is equal to one
+        // Create a string that has all the numbers and letters within it 
+        // (it is easier to then have the recursion look through the string to call a number or letter)
         String[] answers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
         // Base case that 0 when n is equal to 0. E.g 7/8 = 0 = RETURN 0
         if (n == 0) {
             return word;
         }
-        // After the calculation is done (n / b), heads to string to grab number/letter and prints it
+        // After the calculation is done (n / b), the loop heads to string to grab number/letter and prints it
         word = answers[n % b];
 
         // Recall the method in binary form (backwards)
-        // The method functions by taking in both n and b and then dividing n by b and then printing
-        // the letter or the number
+        // The method functions by taking in both n and b and then dividing n by b and then printing the letter or the number from the string array
+        // This method then occurs again and again until the quotient is literally not possible to divide it by b!
         return convert(n / b, b) + word;
     }
 
-//    public static String isPalindrome(String s, int length) {
-//        // If the word is one length or no length at all, it is the same written forwards as it being written backwards
-//        if (length <= 1) {
-//            return true;
-//        }
-//    }
+    public static boolean isPalindrome(String s, int length) {
+        // Seperate the String by using charAt and then using Substring, return the string but backwards, 
+        // (Base case) If the word is one length or no length at all, it is the same written forwards as it being written backwards
+        // Print true 
+        if (length <= 1) {
+            return true;
+            // Return false, both words are not the same backwards
+        } else {
+            if () {
+            }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -132,7 +140,7 @@ public class Exercise2 {
 
         // Print out the user's answer
         System.out.println("Question 6: ");
-        System.out.println(test.convert(1000, 16));
+        System.out.println(test.convert(1000, 8));
 
         // Print out the user's answer
         System.out.println("Question 7:");
