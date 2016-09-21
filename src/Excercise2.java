@@ -40,31 +40,31 @@ public class Excercise2 {
         return n + triangle(n - 1);
     }
 
-    // Problem 4
+    /*// Problem 4
     public void hailstone(int n) {
         System.out.println(n);
         if (n == 1) { // so no infinite loop
-            System.out.println(" ");
+            System.exit(0);
         } else if (n % 2 == 0) { //if even
             hailstone(n / 2);
         } else { // if odd
             hailstone(3 * n + 1);
         }
-    }
+    }*/
 
-    // Problem 5
+    /*// Problem 5
     public String binaryConvert(int n){
-        if(n / 2 == 0){
-            System.out.println("1");
+        if(n == 0){
+            System.exit(0);
         }
-        System.out.println(n % 2);
+        System.out.print(n % 2);
         return binaryConvert(n / 2);
-    }
+    }*/
     
     // Problem 6
-   /*public String convert(int n, int, b){
+   public String convert(int n, int b){
         
-    }*/
+    }
     /**
      * @param args the command line arguments
      */
@@ -77,9 +77,10 @@ public class Excercise2 {
         System.out.println(test.digitalRoot(4325));
         System.out.println("Triangle:");
         System.out.println(test.triangle(4));
-        System.out.println("Hailstone:");
-        test.hailstone(12);
-        System.out.println("BinaryConvert:");
-        System.out.println(test.binaryConvert(156));
+        //System.out.println("Hailstone:");
+        //test.hailstone(12);
+        //System.out.println("BinaryConvert:");
+        //System.out.println(test.binaryConvert(156));
+        System.out.println(test.convert(1000,8));
     }
 }
