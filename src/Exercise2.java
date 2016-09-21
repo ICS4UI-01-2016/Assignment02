@@ -87,23 +87,23 @@ public class Exercise2 {
     
     public boolean Palindrome(String s, int length) {
         boolean p = true;
-        System.out.println(0 + " " + length);
-        System.out.println(s.charAt(0) + " " + s.charAt(length - 1));
+        
         if(s.charAt(0) != s.charAt(length - 1)){
             p = false;
         }
         
-        String newString = s.substring(1, length - 2);
-        s = newString;
-        length = s.length();
-        
         if(length <= 1 || p == false){
             return p;
         }
+        
+        String newString = s.substring(1, length - 1);
 
-        return Palindrome(s, length);
+        return Palindrome(s = newString, length = s.length());
     }
     
+    public int Marbles(int total, int [] bags) {
+        return total;
+    }
     
     public static void main(String[] args) {
         Exercise2 test = new Exercise2();
@@ -123,6 +123,11 @@ public class Exercise2 {
         
         System.out.println("Question 6: " + test.convert(123456, 5));
         
-        System.out.println("Question 7: " + test.Palindrome("racecar",(7)));
+        String word = "racecar";
+        int length = word.length();
+        System.out.println("Question 7: " + test.Palindrome(word, length));
+        
+        int [] bags = {12, 14, 18, 33, 34};
+        System.out.println("Question 8: " + test.Marbles(50, bags));
     }
 }
