@@ -96,6 +96,12 @@ public class Exercise2 {
         return convert(n / b, b) + word;
     }
 
+//    public static String isPalindrome(String s, int length) {
+//        // If the word is one length or no length at all, it is the same written forwards as it being written backwards
+//        if (length <= 1) {
+//            return true;
+//        }
+//    }
     /**
      * @param args the command line arguments
      */
@@ -127,6 +133,9 @@ public class Exercise2 {
         // Print out the user's answer
         System.out.println("Question 6: ");
         System.out.println(test.convert(1000, 16));
+
+        // Print out the user's answer
+        System.out.println("Question 7:");
 
     }
 }
