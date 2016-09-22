@@ -13,6 +13,7 @@ public class Exercise2 {
      * @param args the command line arguments
      */
     
+    // Question 1
     public int digitalSum(int n){
         if(n < 10){
             return n;
@@ -20,6 +21,7 @@ public class Exercise2 {
         return digitalSum(n / 10) + (n % 10);
     }
     
+    // Question 2
     public int digitalRoot(int n){
         int sum = digitalSum(n);
         if(sum < 10){
@@ -28,6 +30,7 @@ public class Exercise2 {
         return digitalRoot(sum);
     }
     
+    // Question 3
     public int triangle(int n){
         if(n == 0){
             return n;
@@ -35,6 +38,7 @@ public class Exercise2 {
         return triangle(n-1) + n;
     }
     
+    // Question 4
     public void hailstone(int n){
         System.out.println(n);
         if(n > 1){
@@ -46,6 +50,7 @@ public class Exercise2 {
         }
     }
     
+    // Question 5
     public String binaryConvert(int n){
         String value = "";
         
@@ -69,6 +74,7 @@ public class Exercise2 {
 //        System.out.print(n % 2);
 //    }
     
+    // Question 6
     public String convert(int n, int b){
         String [] digit = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
         String value = "";
@@ -85,6 +91,7 @@ public class Exercise2 {
         return value;
     }
     
+    // Question 7
     public boolean Palindrome(String s, int length) {
         boolean p = true;
         
@@ -101,6 +108,7 @@ public class Exercise2 {
         return Palindrome(s = newString, length = s.length());
     }
     
+    // Question 8 (Challenge):
     public int Marbles(int total, int [] bags) {
         int marblesInBox = 0;
         return marblesInBox;
