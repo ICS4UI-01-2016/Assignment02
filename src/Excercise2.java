@@ -41,30 +41,37 @@ public class Excercise2 {
     }
 
     /*// Problem 4
-    public void hailstone(int n) {
-        System.out.println(n);
-        if (n == 1) { // so no infinite loop
-            System.exit(0);
-        } else if (n % 2 == 0) { //if even
-            hailstone(n / 2);
-        } else { // if odd
-            hailstone(3 * n + 1);
-        }
-    }*/
+     public void hailstone(int n) {
+     System.out.println(n);
+     if (n == 1) { // so no infinite loop
+     System.exit(0);
+     } else if (n % 2 == 0) { //if even
+     hailstone(n / 2);
+     } else { // if odd
+     hailstone(3 * n + 1);
+     }
+     }*/
 
     /*// Problem 5
-    public String binaryConvert(int n){
-        if(n == 0){
-            System.exit(0);
-        }
-        System.out.print(n % 2);
-        return binaryConvert(n / 2);
-    }*/
+     public String binaryConvert(int n){
+     if(n == 0){
+     System.exit(0);
+     }
+     System.out.print(n % 2);
+     return binaryConvert(n / 2);
+     }*/
     
     // Problem 6
-   public String convert(int n, int b){
+    public String convert(int n, int b) {
+        if (n == 0) {
+            System.exit(0);
+        } else if (b < 10) {
+            System.out.print(n % b);
+            return convert(n / b, b);
+        }
         
     }
+
     /**
      * @param args the command line arguments
      */
@@ -81,6 +88,7 @@ public class Excercise2 {
         //test.hailstone(12);
         //System.out.println("BinaryConvert:");
         //System.out.println(test.binaryConvert(156));
-        System.out.println(test.convert(1000,8));
+        System.out.println("Convert: ");
+        System.out.println(test.convert(1000, 8));
     }
 }
