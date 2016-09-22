@@ -100,13 +100,26 @@ public class Exercise2 {
     public static boolean isPalindrome(String s, int length) {
         // Seperate the String by using charAt and then using Substring, return the string but backwards, 
         // (Base case) If the word is one length or no length at all, it is the same written forwards as it being written backwards
-        // Print true 
+        // Print true is the word is equal or less than 1
         if (length <= 1) {
             return true;
-            // Return false, both words are not the same backwards
+
+        }
+
+        // Create a new string for the first letter
+        String first = s.substring(0, 1);
+        // Create a new string for the second letter
+        System.out.println(length);
+        String last = s.substring(s.length() - 1, s.length());
+
+        // If the first and the last letter equal the same letter 
+        if (first.equals(last)) {
+            // Use a substring to seperate the letter, cutting off the first and the last letter, checking if they are the same
+            // This then happens again and again!
+            return isPalindrome(s.substring(1, length - 1), length - 2);
         } else {
-            if () {
-            }
+            // Return false if the letters are no the same!
+            return false;
         }
     }
 
@@ -144,6 +157,7 @@ public class Exercise2 {
 
         // Print out the user's answer
         System.out.println("Question 7:");
+        System.out.println(test.isPalindrome("abcdba", 6));
 
     }
 }
