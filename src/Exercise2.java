@@ -35,11 +35,20 @@ public class Exercise2 {
         int answer2 = digitalSum(answer);
         int answer3 = triangle(n);
         int answer4 = hailStone(n);
-        int[] amount = new [2];
+        int[] amount = new int[5];
+        amount[0] = 12;
+        amount[1] = 14;
+        amount[2] = 18;
+        amount[3] = 33;
+        amount[4] = 34;
+        int[] array = {12,14,18,33,34};
+        
         //boolean answer8 = isPalindrome(word, wordSize);
         String answer5 = binaryConvert(n);
         String answer6 = convert(n, b);
         boolean answer7 = isPalindrome(word, wordSize);
+        int answer8 = marbles(n,array);
+        
 
         //Prints answer for questions
         System.out.println("Answer#1 " + answer);
@@ -49,6 +58,7 @@ public class Exercise2 {
         System.out.println("Answer#5 " + answer5);
         System.out.println("Answer#6 " + answer6);
         System.out.println("Answer#7 " + answer7);
+        System.out.println("Answer#8 " + answer8);
 
     }
 
@@ -225,5 +235,15 @@ public class Exercise2 {
         return isPalindrome(s, length - 2);
     }
     
-    public static int marbles(int n, )
+    public static int marbles(int n, int[]array ){
+        int lengthy = array.length;
+        int number = 0;
+        System.out.println("Here YOU GO " + lengthy);
+       
+        System.out.println(" Here ROSE " + array);
+        return marbles(n,array[2]) ;
+        
+        
+    }
+    
 }
