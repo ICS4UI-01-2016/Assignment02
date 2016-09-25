@@ -235,13 +235,32 @@ public class Exercise2 {
         return isPalindrome(s, length - 2);
     }
     
-    public static int marbles(int n, int[]array ){
-        int lengthy = array.length;
-        int number = 0;
-        System.out.println("Here YOU GO " + lengthy);
+    public static int marbles(int n, int[]box ){
+        int lengthy = box.length;
+         for (int i = 1; i < box.length; i++){
+         int bigger = box[0] + box[i];   
+         
+         if(bigger )
+        }
+        if(box.length == 0){
+            return 0;
+        }
+        
        
-        System.out.println(" Here ROSE " + array);
-        return marbles(n,array[2]) ;
+        int number = 0;
+        int results = box[lengthy -1] + box[lengthy-2]; 
+        System.out.println("Here YOU GO " + lengthy);
+        if(n < results ){
+            
+        }
+       
+       
+       
+        int[]hello = new int[3];
+      
+        System.out.println("Count MAN ");
+        System.out.println(" Here's the results " + results);
+        return marbles(n,hello);
         
         
     }
