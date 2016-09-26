@@ -121,6 +121,9 @@ public class Exercise2 {
 
 //    public static int lostMarbles(int maxMarbles, int[] numMarbles) {
 //
+//        if (numMarbles.length == 0) {
+//            return 0;
+//        }
 //    }
     /**
      * @param args the command line arguments
