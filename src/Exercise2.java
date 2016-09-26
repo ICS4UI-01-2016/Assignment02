@@ -237,10 +237,16 @@ public class Exercise2 {
     
     public static int marbles(int n, int[]box ){
         int lengthy = box.length;
-         for (int i = 1; i < box.length; i++){
-         int bigger = box[0] + box[i];   
+        int bigger = 0;
+        int smaller = 0;
+         for (int i = 0; i < box.length; i++){
          
-         if(bigger )
+         bigger = bigger + box[i];  
+             
+         
+         if(bigger > n){
+             return bigger;
+         }
         }
         if(box.length == 0){
             return 0;
