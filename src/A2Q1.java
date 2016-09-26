@@ -51,6 +51,16 @@ public class A2Q1 {
         }
         
     }
+    public static int convert(int e, int f){
+        if ( e == 0|e == 1){
+            return 0;
+        }if (e % f == 0){
+            System.out.println(e);
+            return convert(e = e/f, f);
+        }else{
+            return 0;
+        }
+    }
     
     
     /**
@@ -112,6 +122,15 @@ public class A2Q1 {
         
         
         // problem 6
-        // ask the user to enter a
+        // ask the user to enter a positive integer
+        System.out.println("Enter a positive integer");
+        // store in e
+        int e = input.nextInt();
+        // ask user to enter a base positive integer
+        System.out.println("Enter a posiive base integer");
+        // store in f
+        int f = input.nextInt();
+        // activate method
+        System.out.println(convert(e,f));
     }
 }
