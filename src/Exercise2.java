@@ -1,25 +1,20 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
+ * Exercise 2: Recursion
+ * 
+ * All answer to Exercise 3 are contained in this single file
  *
  * @author richj0985
  */
 public class Exercise2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     // Question 1
     // Create the rescursive method digitalSum(int n) that given a non-negative int n, 
-    // return the sum of its digits recursively. 
+    // Recursely pull of each of the right most digits of the number of the number
+    // and sum the digits using the return of the recursive call.
     public int digitalSum(int n){
         
         // BASE CASE
-        // if n is less than 10 then it should return n
+        // if n is less than 10, then the remaining number is a single digit, return the number n
         if(n < 10){
             return n;
         }
@@ -38,19 +33,21 @@ public class Exercise2 {
     // Write a recursive function digitalRoot(n) which returns the digital root of n. 
     public int digitalRoot(int n){
         
-        // create variable that calls on method 1 (digitalSum) to get the sum on the digits
-        // and then stores this in a variable called sum
+        // sum the digits of the number and determine if the sum has multiple digit.
+        // to sum the digits of the number, we use the method from question 1
         // CHANGED STATE
         int sum = digitalSum(n);
         
         // BASE CASE
-        // if the sum is one digit than rteturn the sum
+        // if the sum is one digit number then return the sum
+        // otherwise the number has more than 1 digit 
+        // continue to recurse to sum the digits
         if(sum < 10){
             return sum;
         }
         
-        // CALL ON ITSELF
-        // continue to call on itself
+        // The number has multiple digits, continue 
+        // to CALL ON ITSELF to sum the digits and return that result
         return digitalRoot(sum);
     }
     
@@ -59,17 +56,23 @@ public class Exercise2 {
     // The topmost row has 1 block, the next row down has 2 blocks, the next row has 3 blocks, and so on. 
     // Create a recursive method called triangle(int n) to compute recursively
     // the total number of blocks in such a triangle with the given number of rows. 
+    // The recursive routine will compute the number of blocks in each row N, 
+    // and add the number of blocks in that row to the total number of blocks
+    // in all rows in triangle less than N to come to total # of blocks. 
     public int triangle(int n){
         
         // BASE CASE
-        // if there is no blocks left than return n
+        // if there is no blocks left and number of blocks in row is 0, return 0
         if(n == 0){
             return n;
         }
         
         // CALL ON ITSELF
         // CHANGED STATE
-        // continue to call on itself changing the state of n by reducing it by 1 and additing the value of n
+        // continue to call on itself changing the state of n by reducing it by 1 to move to the 
+        // call the routine recursively to get the total number of blocks 
+        // for a triangle with n-1 rows in it and then add n blocks to that total 
+        // to then return the total blocks in a triangle with n rows. 
         return triangle(n-1) + n;
     }
     
@@ -77,7 +80,7 @@ public class Exercise2 {
     // The Hailstone pattern is generated using 2 simple rules: 
     // If the current number, n, in the sequence is even, the next number is n/2, otherwise, the next number is 3*n+1. 
     // Repeating this process will generate the Hailstone sequence. 
-    // Your job is to write a recursive method hailstone(int n) that will print out this sequence for any postive integer n that is greater than 0. 
+    // Write a recursive method hailstone(int n) that will print out this sequence for any postive integer n that is greater than 0. 
     // Note: once your sequence hits 1, you will want to stop the sequence or you will be stuck in an infinite loop.
     public void hailstone(int n){
         
@@ -85,7 +88,9 @@ public class Exercise2 {
         System.out.println(n);
         
         // BASE CASE
-        // if n is equal to 1 than the method should stop
+        // if n is equal to 1 then we have reached the end of the hailstore sequence, the method should stop 
+        // and not recurse further.  Otherwise we have not reached the end of the hailstone sequence and 
+        // should continue to recurse using the hailstone pattern
         if(n > 1){
             
             // if n is an even number than it should call on itself again however divinding the value of n by 2
@@ -109,10 +114,11 @@ public class Exercise2 {
     // We will use repeated division by 2, the quotient and the remainder to do this. 
     public String binaryConvert(int n){
         
-        // create a variable that stores the characters found into a string
+        // create a variable that stores the number for the binary conversion into a string
         String value = "";
         
-        // is number larger than 2, if yes then recurse
+        // is number larger than 2, if yes then recurse to convert the remainder
+        // after dividing by 2, otherwise we have hit the BASECASE of 0 or 1 and don't recurse
         if(n / 2 != 0){
             // CALL ON ITSELF
             // CHANGED STATE
@@ -120,19 +126,17 @@ public class Exercise2 {
             value = binaryConvert(n / 2);
         }
         
-        // determine the remainder and append the remainder in string form
-        // if n has no remainder than
+        // determine the remainder and append the remainder in string form as 0 or 1
         if ( n % 2 == 0 ) {
-            // value shold equal itself plus 0
+            // append 0 for value should equal itself plus 0
             value = value + "0";
             
         // if n has a remainder than
         } else {
-            // value shold equal itself plus 1
+            // value should equal itself plus 1
             value = value + "1";
         }
         
-        // BASE CASE
         // return the string
         return value;
     }
@@ -153,6 +157,7 @@ public class Exercise2 {
                    
         // determine if the number is larger than a single digit in the base.
         // If it is recurse to process the next position/digit
+        // If number is not larger than base, then we have hit the BASE CASE and don't need to recurse
         if(n >= b){
             // CALL ON ITSELF
             // CHANGED STATE
@@ -163,10 +168,10 @@ public class Exercise2 {
         // determine the remainder and append the remainder in string form
         value = value + digit[ n % b ];
         
-        // BASE CASE
         // return the string
         return value;
     }
+    
     
     // Question 7
     // A palindrome is a sequence of characters or numbers that looks the same forwards and backwards. 
@@ -175,62 +180,37 @@ public class Exercise2 {
     // Write a function that takes a string and its length as arguments and recursively determines whether the string is a palindrome or not. 
     // Name this method isPalindrome(String s, int length) and make it return a boolean instead of just printing it to the screen. 
     public boolean Palindrome(String s, int length) {
+        // BASE CASE - empty string considered palindrome
+        if(length == 0){
+            return true;
+        }
+
+        // BASE CASE - if string is single character than it is a palindrome
+        if(length == 1){
+            // no string, declare it no a palindrome
+            return true;
+        }
         
-        // create variable to determine with the word is a palindrome or not
-        boolean p = true;
-        
+        // string is long than 1 character
         // if the first letter and the last letter are not equal than it cannot be a palindrome
         if(s.charAt(0) != s.charAt(length - 1)){
-            p = false;
+            // not a Palindome
+            return false;
         }
         
-        // BASE CASE
-        // if the length is less than or equal to 1 or it has already been determined that it is not a palindrome than return p
-        if(length <= 1 || p == false){
-            return p;
-        }
         
         // CALL ON ITSELF
         // CHANGED STATE
         // chop off the first and last leter of the word 
         // and call on itself with the new word and the new length of that word
-        String newString = s.substring(1, length - 1);
-        return Palindrome(s = newString, length = s.length());
-    }
-    
-    // Question 8 (Challenge)
-    // Create a method that will calculate the growth of money in a savings account.
-    // Therefore the program should receive the initial value and interest rate of the account.
-    // Finally, it should calculate and output the number of years it took to double and reach 1 million.
-    public static int calcMaxMarblesCanBeStored( int roomLeftInBox, int marblesInBags[], int bagToConsider ) {
+        String newString = s.substring(1, s.length() - 1);
         
-        // BASE CASE
-        // if no more bags left to consider, then we can't store any more marbles in box
-      
-        // Determine the maximum number of marbles we can store in box by determine maximum
-        // number of marbles we we fit if we include include each bag in box compared
-        // to the max number we can fit if we don't include the bag in the box
-       
-        // determine number of marbles can be stored if we include bag
- 
- 
-     
-        // determine number of marbles can be stored if we don't include the bag
-       
-        // Determine if including the bag produced a larger total number of marbles that can be stored
-        // then if we do not include the bag.  
-        // if including the bag of marbles doesn't exceed the room left in the box and
-        // and including the bag produces larger number that can be stored than
-        // then return the total marbles stored including the bag included otherwise return
-        // max number of marbles can be stored without including the bag.
-        
-        return 0;
-    }
-        
+        return Palindrome( newString, newString.length() );
+    }    
     
     public static void main(String[] args) {
         Exercise2 test = new Exercise2();
-        
+      
         // Call on Question 1 and print out answer to this recurision
         System.out.println("Question 1: " + test.digitalSum(126));
         
@@ -249,17 +229,12 @@ public class Exercise2 {
         
         // Call on Question 6 and print out answer to this recurision
         System.out.println("Question 6: " + test.convert(123456, 5));
-        
+    
+       
         // Call on Question 7 and print out answer to this recurision using the
         // stored word and its length in the variables
         String word = "racecar";
-        int length = word.length();
-        System.out.println("Question 7: " + test.Palindrome(word, length));
-        
-        // Call on Question 8 and print out answer to this recurision using the
-        // stored array of the different numbers of marbles in each bag and
-        // the total number of marbles that can fit in the box
-        int [] marblesInBag = {12, 14, 18, 33, 34};
-        System.out.println("Question 8: " + calcMaxMarblesCanBeStored( 50, marblesInBag, 0 ) );
+        System.out.println("Question 7: " + word + " = "+ test.Palindrome(word, word.length()) );
     }
+
 }
