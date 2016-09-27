@@ -47,19 +47,31 @@ public class A2Q1 {
             return d;
         }else{
             System.out.println(d % 2);
-            return binaryConvert(d = d/2);
+            return binaryConvert(d/2);
         }
         
     }
-    public static int convert(int e, int f){
+    public static String convert(int e, int f){
         if ( e == 0 ){
-            return 0;
+            return "";
+        }if ((e % f) >= 10 | (e % f) < 16){
+                if (e % f == 10){
+                    return "A";
+                }if (e % f == 11){
+                    return "B";
+                }if (e % f == 12){
+                    return "C";
+                }if (e % f == 13){
+                    return "D";
+                }if (e % f == 14){
+                    return "E";
+                }if (e % f == 15){
+                    return "F";
+                }
         }else{
-            
-            System.out.println(e % f);
-            return convert(e = e/f, f);
-            
+            return convert(e/f, f) + (e % f);
         }
+        
     }
     
     
@@ -70,56 +82,56 @@ public class A2Q1 {
         // make a scanner
         Scanner input = new Scanner(System.in);
         A2Q1 test = new A2Q1();
-        
-        // problem 1
-        // tell the user to enter a number
-        System.out.println("Enter a number");
-        // store the number in int n
-        int a = input.nextInt();
-        // sout sum of digits
-        System.out.println(test.digitalSum(a));        
-        // store sum in a variable
-        int problem1 = digitalSum(a);
-        
-        
-        
-        // problem two
-        // store root of sum in a variable
-        int problem2 = digitalRoot(problem1);        
-        // print out the root
-        System.out.println(problem2);
-        
-        
-        
-        // problem 3
-        // ask user to enter the triangle row number
-        System.out.println("Enter the row number");     
-        // store the number in variable b
-        int b = input.nextInt();
-        // print out total blocks at that row
-        System.out.println(triangleBlocks(b));
-        
-        
-        
-        // problem 4
-        // ask the user to enter a number
-        System.out.println("Enter a number");
-        // store in a variable
-        int c = input.nextInt();
-        // activate method and sout answers
-        System.out.println(hailstone(c));
-        
-        
-        
-        // problem 5
-        // ask the user to enter a number
-        System.out.println("Enter a number to convert into binary");
-        // store the number in a variable
-        int d = input.nextInt();
-        // activate method and sout ansers
-        System.out.println(binaryConvert(d));
-        
-        
+//        
+//        // problem 1
+//        // tell the user to enter a number
+//        System.out.println("Enter a number");
+//        // store the number in int n
+//        int a = input.nextInt();
+//        // sout sum of digits
+//        System.out.println(test.digitalSum(a));        
+//        // store sum in a variable
+//        int problem1 = digitalSum(a);
+//        
+//        
+//        
+//        // problem two
+//        // store root of sum in a variable
+//        int problem2 = digitalRoot(problem1);        
+//        // print out the root
+//        System.out.println(problem2);
+//        
+//        
+//        
+//        // problem 3
+//        // ask user to enter the triangle row number
+//        System.out.println("Enter the row number");     
+//        // store the number in variable b
+//        int b = input.nextInt();
+//        // print out total blocks at that row
+//        System.out.println(triangleBlocks(b));
+//        
+//        
+//        
+//        // problem 4
+//        // ask the user to enter a number
+//        System.out.println("Enter a number");
+//        // store in a variable
+//        int c = input.nextInt();
+//        // activate method and sout answers
+//        System.out.println(hailstone(c));
+//        
+//        
+//        
+//        // problem 5
+//        // ask the user to enter a number
+//        System.out.println("Enter a number to convert into binary");
+//        // store the number in a variable
+//        int d = input.nextInt();
+//        // activate method and sout ansers
+//        System.out.println(binaryConvert(d));
+//        
+//        
         
         // problem 6
         // ask the user to enter a positive integer
