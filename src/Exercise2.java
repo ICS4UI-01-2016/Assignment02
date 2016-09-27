@@ -25,7 +25,7 @@ public class Exercise2 {
         if (sum <= 9) {
             return sum;
         }
-        // Calling the method again and running the new sum through digitalSum method! Breaking it down and then adding the digits together (occurs within the 2nd return in the digitalSum method)
+        // Calling the method again and running the new sum through the digitalSum method! Breaking it down and then adding the digits together (occurs within the 2nd return in the digitalSum method)
         return digitalRoot(sum);
     }
 
@@ -119,10 +119,12 @@ public class Exercise2 {
         }
     }
 
+    // Tried to do question 8 but did not succeed :(
 //    public static int lostMarbles(int maxMarbles, int[] numMarbles) {
 //
 //        if (numMarbles.length == 0) {
 //            return 0;
+//            int [] leftOvers = new int[maxMarbles.length - 1];
 //        }
 //    }
     /**
@@ -134,11 +136,11 @@ public class Exercise2 {
 
         // Print out the user's answer 
         System.out.println("Question 1: ");
-        System.out.println(test.digitalSum(0));
+        System.out.println(test.digitalSum(12));
 
         // Print out the user's answer 
         System.out.println("Question 2: ");
-        System.out.println(test.digitalRoot(0));
+        System.out.println(test.digitalRoot(276));
 
         // Print out the user's answer
         System.out.println("Question 3: ");
