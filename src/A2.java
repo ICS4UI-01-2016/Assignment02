@@ -58,11 +58,40 @@ public class A2 {
     public static int binaryConvert(int b){
         if(b == 0||b == 1){
             return b;
+        }else{
+            System.out.println(b % 2);
+            return binaryConvert(b = b/2);
         }
-        
-        return 0;
     }
     
+    public static String convert(int e, int f){
+        if(e == 0){
+            return "";
+        }else{
+            if((e % f) >= 10){
+                if(e % f == 10){
+                    return "A";
+                }
+                if(e % f == 11){
+                    return "B";
+                }
+                if(e % f == 12){
+                    return "C";
+                }
+                if(e % f == 13){
+                    return "D";
+                }
+                if(e % f == 14){
+                    return "E";
+                }
+                if(e % f == 15){
+                    return "F";
+                }
+            }
+            return convert(e / f,f) + (e % f);
+        }
+    
+}
     
     
     
@@ -95,7 +124,14 @@ public class A2 {
         System.out.println("Please enter a number for problem 5.");
         int b = input.nextInt();
         
+        System.out.println(binaryConvert(b));
         
+        System.out.println("Please enter a positive integer for problem 6.");
+        int e = input.nextInt();
+        System.out.println("Please enter a base number for problem 6.");
+        int f = input.nextInt();
+        
+        System.out.println(convert(e,f));
         
         
        
