@@ -52,13 +52,13 @@ public class A2Q1 {
         
     }
     public static int convert(int e, int f){
-        if ( e == 0|e == 1){
+        if ( e == 0 ){
             return 0;
-        }if (e % f == 0){
-            System.out.println(e);
-            return convert(e = e/f, f);
         }else{
-            return 0;
+            
+            System.out.println(e % f);
+            return convert(e = e/f, f);
+            
         }
     }
     
