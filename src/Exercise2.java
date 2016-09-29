@@ -163,7 +163,7 @@ public class Exercise2 {
         return convert(n / b,b) + word;
     }
     
-    public static boolean isPalindrome(String s){
+    public boolean isPalindrome(String s){
         
         //if length of string entered is 0 or 1 then its true
         if(s.length() == 0 || s.length() == 1){
