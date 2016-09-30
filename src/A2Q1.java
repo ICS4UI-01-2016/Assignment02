@@ -5,76 +5,93 @@ import java.util.Scanner;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author sevcm7279
  */
 public class A2Q1 {
-    public static int digitalSum(int a){
-        if (a < 10){
-            return a;
-        }
-        return digitalSum(a/10) + digitalSum(a%10);
-    }
-    public static int digitalRoot(int a){
-        if (a < 10){
-            return a;
-        }
-        return digitalSum(a/10) + digitalSum(a%10);
-        }
-    public static int triangleBlocks (int b){
-        if (b == 0|b == 1){
-            return b;
-        }
-        return b + triangleBlocks(b - 1);
-    }
-    public static int hailstone (int c){
-        if (c == 0|c == 1){
-            return c;
-        }
-        if (c % 2 == 0){
-           System.out.println(c);
-           return hailstone(c = c/2);
-             
-        }else{
-        System.out.println(c);
-        return hailstone(3*c + 1);
-        }
-    }
-    public static int binaryConvert (int d){
-        if (d == 0|d == 1){
-            return d;
-        }else{
-            System.out.println(d % 2);
-            return binaryConvert(d/2);
-        }
+
+//    public static int digitalSum(int a) {
+//        if (a < 10) {
+//            return a;
+//        }
+//        return digitalSum(a / 10) + digitalSum(a % 10);
+//    }
+//
+//    public static int digitalRoot(int a) {
+//        if (a < 10) {
+//            return a;
+//        }
+//        return digitalSum(a / 10) + digitalSum(a % 10);
+//    }
+//
+//    public static int triangleBlocks(int b) {
+//        if (b == 0 | b == 1) {
+//            return b;
+//        }
+//        return b + triangleBlocks(b - 1);
+//    }
+//
+//    public static int hailstone(int c) {
+//        if (c == 0 | c == 1) {
+//            return c;
+//        }
+//        if (c % 2 == 0) {
+//            System.out.println(c);
+//            return hailstone(c = c / 2);
+//
+//        } else {
+//            System.out.println(c);
+//            return hailstone(3 * c + 1);
+//        }
+//    }
+//
+//    public static int binaryConvert(int d) {
+//        if (d == 0 | d == 1) {
+//            return d;
+//        } else {
+//            System.out.println(d % 2);
+//            return binaryConvert(d / 2);
+//        }
+//
+//    }
+//
+//    public String letter(int e) {
+//        if (e == 10) {
+//            return "A";
+//        }
+//        if (e == 11) {
+//            return "B";
+//        }
+//        if (e == 12) {
+//            return "C";
+//        }
+//        if (e == 13) {
+//            return "D";
+//        }
+//        if (e == 14) {
+//            return "E";
+//        }
+//        if (e == 15) {
+//            return "F";
+//        }
+//        return "" + e;
+//    }
+//
+//    public String convert(int e, int f) {
+//        if (e == 0) {
+//            return "";
+//        } else {
+//            if ((e % f) >= 10 && e <= f) {
+//                return letter(e % f);
+//            }
+//            return convert(e / f, f) + letter(e % f);
+//        }
+//    }
+    
+    public String isPalindrome(int ){
         
     }
-    public static String convert(int e, int f){
-        if ( e == 0 ){
-            return "";
-        }if ((e % f) >= 10 | (e % f) < 16){
-                if (e % f == 10){
-                    return "A";
-                }if (e % f == 11){
-                    return "B";
-                }if (e % f == 12){
-                    return "C";
-                }if (e % f == 13){
-                    return "D";
-                }if (e % f == 14){
-                    return "E";
-                }if (e % f == 15){
-                    return "F";
-                }
-        }else{
-            return convert(e/f, f) + (e % f);
-        }
-        
-    }
-    
-    
     /**
      * @param args the command line arguments
      */
@@ -132,17 +149,38 @@ public class A2Q1 {
 //        System.out.println(binaryConvert(d));
 //        
 //        
+
+//        // problem 6
+//        // ask the user to enter a positive integer
+//        System.out.println("Enter a positive integer");
+//        // store in e
+//        int e = input.nextInt();
+//        // ask user to enter a base positive integer
+//        System.out.println("Enter a posiive base integer");
+//        // store in f
+//        int f = input.nextInt();
+//        // activate method
+//        System.out.println(test.convert(e, f));
         
-        // problem 6
-        // ask the user to enter a positive integer
-        System.out.println("Enter a positive integer");
-        // store in e
-        int e = input.nextInt();
-        // ask user to enter a base positive integer
-        System.out.println("Enter a posiive base integer");
-        // store in f
-        int f = input.nextInt();
-        // activate method
-        System.out.println(convert(e,f));
+        
+        
+        // problem 7
+        // ask the user to enter a word
+        System.out.println("Enter A word");
+        // store the word in a string
+        String g = input.nextLine();
+        //activate method
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
     }
+    
 }
