@@ -89,8 +89,8 @@ public class A2Q1 {
 //        }
 //    }
     
-    public String isPalindrome(int ){
-        
+    public String isPalindrome(int g){
+        return "";
     }
     /**
      * @param args the command line arguments
