@@ -16,39 +16,54 @@ public class Exercise2 {
             // return number
             return n;
         }
-        // 
+        // return remainder plus number divided by 10
         return digitalSum(n % 10) + digitalSum(n / 10);
     }
     // problem 2
 
     public int digitalRoot(int n) {
+        // if number is less than or equal to 9
         if (n <= 9) {
+            // return number
             return n;
         }
+        // return remainder plus number divided by 10
         n = digitalRoot(n % 10) + digitalRoot(n / 10);
+        // if number is more than 9
         if (n > 9) {
+            // return remainder plus number divided by 10
             n = digitalRoot(n % 10) + digitalRoot(n / 10);
         }
+        // return number
         return n;
     }
     // problem 3
 
     public int triangle(int n) {
+        // if number is 0 or 1
         if (n == 0 || n == 1) {
+            // return number
             return n;
         }
+        
         n = n + triangle(n - 1);
         return n;
     }
     // problem 4
 
     public static void hailstone(int n) {
+        // print number typed in
         System.out.println(n);
+        // if number is greater than 1
         if (n > 1) {
+            // if number is even
             if (n % 2 == 0) {
+                // return number divided by 2
                 hailstone(n / 2);
             }
+            // if number is odd
             if (n % 2 == 1) {
+                // return 3*n+1
                 hailstone(3 * n + 1);
             }
         }
@@ -56,23 +71,34 @@ public class Exercise2 {
     // problem 5
 
     public String binaryConvert(int n) {
+        // if number is 0
         if (n == 0) {
+            // return "0"
             return "0";
         }
+        // if number is 1
         if (n == 1) {
+            // return "1"
             return "1";
         }
+        // if number is even
         if (n % 2 == 0) {
+            // return "0" and divide number by 2
             return binaryConvert(n / 2) + "0";
+            // if number is odd
         } else {
+            // return "0" and divide number by 2
             return binaryConvert(n / 2) + "1";
         }
     }
     // problem 6
 
     public String convert(int n, int b) {
+        // if number is less than base
         if (n < b) {
+            // if number is 0
             if (n == 0) {
+                // return "0"
                 return "0";
             }
             if (n == 1) {
@@ -121,6 +147,7 @@ public class Exercise2 {
                 return "F";
             }
         }
+        // if there is a remainder of 0
         if (n % b == 0) {
             return convert(n / b, b) + "0";
         } else if (n % b == 1) {
@@ -159,27 +186,33 @@ public class Exercise2 {
     // problem 7
 
     public boolean isPalindrome(String s, int length) {
+        // if word has 1 letter
         if (length == 0 || length == 1) {
+            // return true
             return true;
         }
+        // if first letter is the same as last letter
         if (s.charAt(0) == s.charAt(length - 1)) {
+            // looks through the next letters
             return isPalindrome(s.substring(1), (length - 1) - 1);
+            // if first and last letter searched do not equal
         } else {
+            // return false
             return false;
         }
-    }
+    }   
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Exercise2 test = new Exercise2();
-        System.out.println("Digital Sum: " + test.digitalSum(473));
-        System.out.println("Digital Root: " + test.digitalRoot(666));
+        System.out.println("Digital Sum: " + test.digitalSum(325));
+        System.out.println("Digital Root: " + test.digitalRoot(325));
         System.out.println("Number of Blocks: " + test.triangle(4));
         test.hailstone(17);
-        System.out.println("Binary: " + test.binaryConvert(15));
-        System.out.println(test.convert(123, 5));
+        System.out.println("Binary: " + test.binaryConvert(325));
+        System.out.println(test.convert(325, 5));
         System.out.println(test.isPalindrome("racecar", 7));
 
     }
