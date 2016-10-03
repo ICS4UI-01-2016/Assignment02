@@ -12,9 +12,11 @@ import java.util.Scanner;
 public class A2Q1 {
 
     public static int digitalSum(int a) {
+        // if the number is a single digit, just return the number
         if (a < 10) {
             return a;
         }
+        // separate the digits of the number and add them together
         return digitalSum(a / 10) + digitalSum(a % 10);
     }
 
@@ -55,8 +57,22 @@ public class A2Q1 {
         }
 
     }
-
+    public String convert(int e, int f) {
+        // if the number is 0, return a blank
+        if (e == 0) {
+            return "";
+            
+        } else {
+            // if the remainder of the number is greater than 10, activate letter method
+            if ((e % f) >= 10 && e <= f) {
+                return letter(e % f);
+            }
+            return convert(e / f, f) + letter(e % f);
+        }
+    } 
+    
     public String letter(int e) {
+        // if the number is 10, return A
         if (e == 10) {
             return "A";
         }
@@ -76,17 +92,6 @@ public class A2Q1 {
             return "F";
         }
         return "" + e;
-    }
-
-    public String convert(int e, int f) {
-        if (e == 0) {
-            return "";
-        } else {
-            if ((e % f) >= 10 && e <= f) {
-                return letter(e % f);
-            }
-            return convert(e / f, f) + letter(e % f);
-        }
     }
 
     public boolean isPalindrome(String g) {
@@ -144,7 +149,7 @@ public class A2Q1 {
         // store the number in variable b
         int b = input.nextInt();
         // print out total blocks at that row
-        System.out.println(triangleBlocks(b));
+        System.out.println(test.triangleBlocks(b));
 
 
 
@@ -154,7 +159,7 @@ public class A2Q1 {
         // store in a variable
         int c = input.nextInt();
         // activate method and sout answers
-        System.out.println(hailstone(c));
+        System.out.println(test.hailstone(c));
 
 
 
@@ -164,7 +169,7 @@ public class A2Q1 {
         // store the number in a variable
         int d = input.nextInt();
         // activate method and sout ansers
-        System.out.println(binaryConvert(d));
+        System.out.println(test.binaryConvert(d));
 
 
 
@@ -177,8 +182,9 @@ public class A2Q1 {
         System.out.println("Enter a posiive base integer");
         // store in f
         int f = input.nextInt();
+        input.nextLine();
         // activate method
-        System.out.println(test.convert(e, f));
+        System.out.println("The coverted number is " + test.convert(e, f));
 
 
 
