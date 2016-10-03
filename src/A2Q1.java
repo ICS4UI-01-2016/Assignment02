@@ -21,37 +21,48 @@ public class A2Q1 {
     }
 
     public static int digitalRoot(int a) {
+        // using answer from the first problem, add the digits of the sum
         if (a < 10) {
             return a;
         }
+        // return the sum of the sum
         return digitalSum(a / 10) + digitalSum(a % 10);
     }
 
     public static int triangleBlocks(int b) {
+        // if the row is one or zero, the amount of blocks is the same as the row
         if (b == 0 | b == 1) {
             return b;
         }
+        // add the current row number to the amount of blocks in the previous row
         return b + triangleBlocks(b - 1);
     }
 
     public static int hailstone(int c) {
+        // if the number is 0 or 1, return the number
         if (c == 0 | c == 1) {
             return c;
         }
+        // determine if the number is even
+        // number is even if there is no remainder when divided by two
         if (c % 2 == 0) {
             System.out.println(c);
             return hailstone(c = c / 2);
 
-        } else {
+        // if the number is not even, using the given formula (3c + 1)
+        } else {           
             System.out.println(c);
             return hailstone(3 * c + 1);
         }
     }
 
     public static int binaryConvert(int d) {
+        // if the number is a 1 or 0, it is already in binary
+        // return the number
         if (d == 0 | d == 1) {
             return d;
         } else {
+            // print the remainder when divided by two
             System.out.println(d % 2);
             return binaryConvert(d / 2);
         }
@@ -129,7 +140,7 @@ public class A2Q1 {
         // store the number in int n
         int a = input.nextInt();
         // sout sum of digits
-        System.out.println(test.digitalSum(a));
+        System.out.println("The digital sum is "+test.digitalSum(a));
         // store sum in a variable
         int problem1 = digitalSum(a);
 
@@ -137,9 +148,9 @@ public class A2Q1 {
 
         // problem two
         // store root of sum in a variable
-        int problem2 = digitalRoot(problem1);
+        int problem2 = test.digitalRoot(problem1);
         // print out the root
-        System.out.println(problem2);
+        System.out.println("The digital root is "+problem2);
 
 
 
@@ -190,7 +201,7 @@ public class A2Q1 {
 
         // problem 7
         // ask the user to enter a word
-        System.out.println("Enter a word");
+        System.out.println("Enter a word to determine if a palindrome or not");
         // store the word in a string
         String g = input.nextLine();
         //activate method
