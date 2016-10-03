@@ -96,7 +96,12 @@ public class A2 {
 
     }
     
-    public String isPalindrome(String s, int)
+    
+            
+    public boolean isPalindrome(String s, int Length){
+        
+        return true;
+    }
     
 
     public static void main(String[] args) {
@@ -135,6 +140,12 @@ public class A2 {
         int f = input.nextInt();
 
         System.out.println(test.convert(e, f));
+        
+        System.out.println("Please enter a word for Problem 7.");
+        String s = input.nextLine();
+        int Length = s.length();
+        
+        System.out.println(test.isPalindrome(s, Length));
         
 
 
