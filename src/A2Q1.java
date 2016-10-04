@@ -142,7 +142,7 @@ public class A2Q1 {
         // sout sum of digits
         System.out.println("The digital sum is "+test.digitalSum(a));
         // store sum in a variable
-        int problem1 = digitalSum(a);
+        int problem1 = test.digitalSum(a);
 
 
 
