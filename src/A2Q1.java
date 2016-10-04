@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class A2Q1 {
 
-    public static int digitalSum(int a) {
+    public int digitalSum(int a) {
         // if the number is a single digit, just return the number
         if (a < 10) {
             return a;
@@ -20,7 +20,7 @@ public class A2Q1 {
         return digitalSum(a / 10) + digitalSum(a % 10);
     }
 
-    public static int digitalRoot(int a) {
+    public int digitalRoot(int a) {
         // using answer from the first problem, add the digits of the sum
         if (a < 10) {
             return a;
@@ -29,7 +29,7 @@ public class A2Q1 {
         return digitalSum(a / 10) + digitalSum(a % 10);
     }
 
-    public static int triangleBlocks(int b) {
+    public int triangleBlocks(int b) {
         // if the row is one or zero, the amount of blocks is the same as the row
         if (b == 0 | b == 1) {
             return b;
@@ -38,7 +38,7 @@ public class A2Q1 {
         return b + triangleBlocks(b - 1);
     }
 
-    public static int hailstone(int c) {
+    public int hailstone(int c) {
         // if the number is 0 or 1, return the number
         if (c == 0 | c == 1) {
             return c;
@@ -56,7 +56,7 @@ public class A2Q1 {
         }
     }
 
-    public static int binaryConvert(int d) {
+    public int binaryConvert(int d) {
         // if the number is a 1 or 0, it is already in binary
         // return the number
         if (d == 0 | d == 1) {
