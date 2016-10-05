@@ -98,9 +98,19 @@ public class A2 {
     
     
             
-    public boolean isPalindrome(String s, int Length){
+    public boolean isPalindrome(String s){
+        if (s.length() == 0 || s.length() == 1){
+            return true;
+        }else{
+            String first = s.substring(0, 1);
+            String last = s.substring(s.length() - 1, s.length());
+            if(first.equals(last)){
+                return isPalindrome(s.substring(1, s.length() - 1));
+            }else{
+                return false;
+            }
+        }
         
-        return true;
     }
     
 
@@ -141,11 +151,12 @@ public class A2 {
 
         System.out.println(test.convert(e, f));
         
+        input.nextLine();
         System.out.println("Please enter a word for Problem 7.");
         String s = input.nextLine();
-        int Length = s.length();
         
-        System.out.println(test.isPalindrome(s, Length));
+        
+        System.out.println(test.isPalindrome(s));
         
 
 
